@@ -62,26 +62,26 @@ const starterIndex = game.party.findIndex(pokemon => pokemon.starter);
 const evolvedPokemon = pokemon.find(pokemon => pokemon.name === 'Ivysaur' || pokemon.name === 'Charmeleon' || pokemon.name === 'Wartortle' || pokemon.name === 'Raichu');
 game.party.splice(starterIndex, 1, evolvedPokemon);
 game.party.forEach(pokemon => {
-  console.log(pokemon.name);
+  console.log(pokemon.name); //ex #8
 })
 pokemon.filter(pokemon => pokemon.starter).forEach(starter => {
-  console.log(starter.name);
+  console.log(starter.name); //ex #9
 });
 game.catchPokemon = function(pokemonObj) { 
-  game.party.push(pokemonObj);
+  game.party.push(pokemonObj); //ex #10
 };
 const pikachu = pokemon.find(pokemon => pokemon.name === 'Pikachu');
 game.catchPokemon(pikachu)
-console.log("Updated party:", game.party);
+console.log("Updated party:", game.party); //ex #11
 game.gyms.forEach(gym => {
   if (gym.difficulty < 6) {
     gym.completed = true;
   }
-});   
+});   //ex #12
 
 //for (let i=0; i <selectPokemon.length; i++)
 
-game.gymStatus = function() {
+game.gymStatus = function() { //ex 13
   const gymTally = { completed: 0, incomplete: 0 };
 
   game.gyms.forEach(gym => {
@@ -92,7 +92,7 @@ game.gymStatus = function() {
     }
   });
 
-  console.log("Gym status:", gymTally);
+  console.log("Gym status:", gymTally); //ex #15
 };
 
 // Call the method to display the tally
@@ -100,7 +100,7 @@ game.gymStatus();
 
 game.partyCount = function() {
   return game.party.length;
-};
+}; //ex #14
 
 // Example usage:
 const partySize = game.partyCount();
@@ -110,8 +110,8 @@ game.gyms.forEach(gym => {
   if (gym.difficulty < 8) {
     gym.completed = true;
   }
-});
+}); //ex #15
 
 console.log("Updated gym statuses:", game.gyms);
-
+//ex #16
 console.log("Final game state:", game);
